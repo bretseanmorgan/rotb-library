@@ -1,5 +1,5 @@
-** Sample Library App **
-* To Run Do the Following *
+#Sample Library App
+##To Run Do the Following
 1. Clone the repo
 2. run 'bundle install'
 3. run rake db:migrate
