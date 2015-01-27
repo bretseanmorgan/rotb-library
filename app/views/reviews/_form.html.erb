@@ -1,0 +1,45 @@
+<%= form_for @review, :html => { :class => "form-horizontal review" } do |f| %>
+
+    <% if @review.errors.any? %>
+    <div id="error_expl" class="panel panel-danger">
+      <div class="panel-heading">
+        <h3 class="panel-title"><%= pluralize(@review.errors.count, "error") %> prohibited this review from being saved:</h3>
+      </div>
+      <div class="panel-body">
+        <ul>
+        <% @review.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+        </ul>
+      </div>
+    </div>
+  <% end %>
+
+  <div class="control-group">
+    <%= f.label :desc, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :desc, :class => 'form-control' %>
+    </div>
+    <%= error_span(@review[:desc]) %>
+  </div>
+  <div class="control-group">
+    <%= f.label :reviewer_name, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :reviewer_name, :class => 'form-control' %>
+    </div>
+    <%= error_span(@review[:reviewer_name]) %>
+  </div>
+  <div class="control-group">
+    <%= f.label :book_id, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :book_id, :class => 'form-control' %>
+    </div>
+    <%= error_span(@review[:book_id]) %>
+  </div>
+
+
+  <%= f.submit nil, :class => 'btn btn-primary' %>
+  <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+            reviews_path, :class => 'btn btn-default' %>
+
+<% end %>
