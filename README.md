@@ -7,9 +7,12 @@
 5. start your rails server and navigate to 'localhost:3000/books'
 
 ## Notes on the scaffold generators
+
 ``rails g scaffold_controller books title:string author:string isbn:string summary:text``
+
 ``rails g model Book title:string author:string isbn:string summary:text``
 
 ## There is also a file in /db/seed.rb
 This is what we use for import data you can run it by typing
+
 ``rake db:seed``
